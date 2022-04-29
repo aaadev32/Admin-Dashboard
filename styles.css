@@ -1,3 +1,7 @@
+a{
+    text-decoration: none;
+}
+
 p{
     margin: 5px;
 }
@@ -9,32 +13,51 @@ b{
 .container{
     display: grid;
     grid-template: 
-    "sb hd hd hd" 1fr
-    "sb ct ct ns" 1fr
-    "sb ct ct ns" 1fr
-    "sb ct ct ns" 1fr
+    "sb hd hd hd" 200px
+    "sb ct ct ns" 1000px
     ;
     
 }
 
 .header{
+    display: grid;
+    grid-template: 
+    "uc uc" 1fr
+    "lc lc" 1fr
+    ;
     grid-area: hd;
     background-color: bisque;
     border: 1px solid red;
 }
 
+
 #upper-container{
     display:flex;
     justify-content: space-between;
+    grid-area: uc;
 }
 
 #lower-container{
     display:flex;
     justify-content: space-between;
+    grid-area: lc;
+}
+
+#buttons{
+    display: flex;
+    align-items: center;
+
+}
+
+#buttons > button{
+    width: 70px;
+    border-radius: 10px;
 }
 
 #search{
+    margin-top: 4px;
     display: flex;
+    grid-area: sch;
 }
 #search-bar{
     width: 400px;
@@ -46,8 +69,20 @@ b{
 }
 
 #notifications-profile{
+    margin: 4px;
     display: flex;
     justify-content: space-between;
+    grid-area: np;
+    
+}
+
+#notifications-profile > img{
+    height: 30px;
+    width: 30px;
+}
+
+#notifications-profile > p{
+    margin: 4px 8px;
 }
 
 #greeting{
@@ -69,6 +104,7 @@ b{
 }
 
 .projects{
+    height: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -91,15 +127,33 @@ b{
 #news-sub{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: 1fr;
     gap: 15px;
 }
 
-.sidebar{
+#trending{
     display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+}
+
+.sidebar{
+    width: 150px;
     grid-area: sb;
     background-color: blanchedalmond;
     border: 1px solid red;
+}
+
+#fixed-container{
+    position: fixed;
+}
+
+#logo{
+    margin: 10px 10px;
+}
+
+#upper-nav{
+    margin: 80px 10px;
+}
+
+#lower-nav{
+    margin: 0 10px;
 }
